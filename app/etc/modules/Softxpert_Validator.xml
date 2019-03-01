@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Softxpert_Validator>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Softxpert_Validator>
+    </modules>
+</config>
