@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Softxpert_Validator>
+            <version>1.0.0</version>
+        </Softxpert_Validator>
+    </modules>
+    <global>
+        <models>
+            <softxpert_validator>
+                <class>Softxpert_Validator_Model</class>
+            </softxpert_validator>
+        </models>
+    </global>
+</config>
