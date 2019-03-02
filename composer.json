@@ -16,7 +16,6 @@
         }
     ],
     "require": {
-        "php": ">=5.6",
         "colinmollenhour/modman": "1.12"
     }
 }
