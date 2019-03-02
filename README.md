@@ -6,8 +6,33 @@
 
 Magento validator is a validation service to validate inputs for requests.
 It depends on Zend validation classes, for more information about these validation rules visit [Zend Documentation](https://framework.zend.com/manual/1.12/en/zend.validate.set.html)
+
+## Table of Contents
+1. [Getting Started](#getting-started)
+    * [Installation](#installation)
+    * [How To](#how-to)
+2. [Rules And Methods](#rules-and-methods)
+    * [Available Rules](#available-validation-rules)
+    * [Available Methods](#available-methods)
+
 ## Getting Started
 ### Installation
+Require the Magento validator via composer
+```bash
+composer require softxpert/magento1-validator
+```
+This isntallation will install [modman](https://github.com/colinmollenhour/modman) package to map Magento files from the vendor directory.
+
+Execute the following commands to map the module files into your Magento project
+```bash
+vendor/bin/modman init
+# If this is the first installation
+vendor/bin/modman link vendor/softxpert/magento1-validator
+# If this is an update, then we need to re-link the files
+vendor/bin/modman repair vendor/softxpert/magento1-validator
+```
+Finally we are done, and you'll find the module files under `app/code/community/Softxpert/Validator` directory.
+
 ### How To
 To validate a request you have 2 ways:
 #### Inline Validation
@@ -56,6 +81,8 @@ $validator->validate($data, $rules);
 ```
 #### Observer Validator
 Create an observer for that particular route and handle all your request validations.
+
+## Rules And Methods
 ### Available Validation Rules
 ##### alpha
 String under alpha rule must consist of alphabetic characters.
@@ -108,6 +135,7 @@ If only `min` is provided, then the rule validates the minimum string length wit
 ##### zip_code:locale
 Validates the value to be a postal zip code. Locale must be provided.
 Eg: `zip_code:ar_EG`
+
 ### Available Methods
 ##### validate
 Prepare the validator with data and rules.
