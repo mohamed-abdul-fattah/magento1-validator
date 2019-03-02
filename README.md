@@ -1,6 +1,9 @@
 # Magento Validator
 >Laravel like Magento 1.x validator.
 
+![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg)
+
 Magento validator is a validation service to validate inputs for requests.
 It depends on Zend validation classes, for more information about these validation rules visit [Zend Documentation](https://framework.zend.com/manual/1.12/en/zend.validate.set.html)
 ## Getting Started
@@ -76,7 +79,7 @@ Allowed extensions for a particular file input field.
 ##### float
 Validates a given value to be float.
 ##### gt:min
-Validates the given value to be greater that a `min` value.
+Validates the given value to be greater than a `min` value.
 ##### integer
 Validates a given value to be an integer.
 ##### image
