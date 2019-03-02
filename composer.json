@@ -1,7 +1,7 @@
 {
     "name": "softxpert/magento1-validator",
     "description": "Laravel like Magento 1.x validator",
-    "type": "magento-module",
+    "type": "library",
     "keywords": [
         "magento",
         "validator",
@@ -15,5 +15,8 @@
             "email": "csmohamed8@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=5.6",
+        "colinmollenhour/modman": "1.12"
+    }
 }
