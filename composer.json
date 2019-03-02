@@ -1,0 +1,19 @@
+{
+    "name": "softxpert/magento1-validator",
+    "description": "Laravel like Magento 1.x validator",
+    "type": "magento-module",
+    "keywords": [
+        "magento",
+        "validator",
+        "laravel like validator",
+        "validation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Abdul-Fattah",
+            "email": "csmohamed8@gmail.com"
+        }
+    ],
+    "require": {}
+}
