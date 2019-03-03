@@ -14,6 +14,8 @@ It depends on Zend validation classes, for more information about these validati
 2. [Rules And Methods](#rules-and-methods)
     * [Available Rules](#available-validation-rules)
     * [Available Methods](#available-methods)
+3. [Contributing](#contributing)
+4. [License](#license)
 
 ## Getting Started
 ### Installation
@@ -183,3 +185,9 @@ Return validation error messages in an HTML un-ordered list block.
  */
 public function getMessagesTemplate()
 ```
+
+## Contributing
+Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
