@@ -16,6 +16,7 @@ It depends on Zend validation classes, for more information about these validati
     * [Available Methods](#available-methods)
 3. [Contributing](#contributing)
 4. [License](#license)
+5. [Change Logs](#changelog)
 
 ## Getting Started
 ### Installation
@@ -187,7 +188,10 @@ public function getMessagesTemplate()
 ```
 
 ## Contributing
-Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
+Please, read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
+
+## ChangeLog
+Please, read the [CHANGELOG.md](/CHANGELOG.md) for more details about releases updates.
