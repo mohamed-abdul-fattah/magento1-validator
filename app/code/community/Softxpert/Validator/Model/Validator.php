@@ -35,6 +35,7 @@ class Softxpert_Validator_Model_Validator
         'extensions'    => 'Extension',
         'even'          => 'Even',
         'odd'           => 'Odd',
+        'str_extension' => 'StrExtension',
     ];
 
     /**

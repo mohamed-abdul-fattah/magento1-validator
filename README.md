@@ -131,6 +131,8 @@ Eg: `regex:/^Test/`
 Field under validation is required.
 ##### string
 Validates that the given value is a string.
+##### str_extension:txt,log,...
+Validates that the given file name is in the provided extension set (no MIME type checks).
 ##### str_size:min,max
 String size validates a string size with `min` and `max` values.
 If `min` and `max` are not provided, then the rule validates the value as a string.
