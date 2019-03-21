@@ -1,2 +1,6 @@
 app/code/community/Softxpert/Validator
 app/etc/modules/Softxpert_Validator.xml
+tests/Unit/ValidationsTest.php
+tests/fixtures/Unit/dummy.txt
+tests/fixtures/Unit/magento.jpg
+tests/ErrorMessages.php

@@ -73,7 +73,7 @@ class Softxpert_Validator_Model_Validator
         $this->_validator = new Zend_Filter_Input(null, $this->_prepareRules($rules),
             $this->_supportNestedValidations($rules, $data), [
             'validatorNamespace' => 'Softxpert_Validator_Validate',
-            'missingMessage'     => 'This field is required',
+            'missingMessage'     => 'The %field% field is required',
         ]);
 
         return $this;
