@@ -116,8 +116,8 @@ Validates a given value to be an integer.
 The file under validation must be an image (jpeg, png, bmp, gif, ...)
 ##### in:foo,bar...
 Validates that a given value is one of the provided options.
-##### ip
-Validates the given value to be an IP address.
+##### ipv4
+Validates the given value to be an IP v4 address.
 ##### lt:max
 Validates the given value to be less than a `max` value.
 ##### nullable

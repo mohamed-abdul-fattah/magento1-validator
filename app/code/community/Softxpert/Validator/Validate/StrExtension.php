@@ -28,7 +28,7 @@ class Softxpert_Validator_Validate_StrExtension extends Softxpert_Validator_Vali
         $values = func_get_args();
         parent::__construct(...$values);
 
-        $this->setMessage("'%filename%' must be a file of type '%options%'", self::NOT_IN);
+        $this->setMessage($this->getMessage(), self::NOT_IN);
         $this->_messageVariables[self::FILE] = '_file';
     }
 
@@ -42,5 +42,17 @@ class Softxpert_Validator_Validate_StrExtension extends Softxpert_Validator_Vali
         $pathInfo    = pathinfo($value);
         $this->_file = $pathInfo['basename'];
         parent::_setValue($pathInfo['extension']);
+    }
+
+    /**
+     * Construct the error message.
+     *
+     * @return string
+     */
+    protected function getMessage()
+    {
+        $options = implode(',', $this->haystack);
+
+        return "'%filename%' must be a file of type '{$options}'";
     }
 }
