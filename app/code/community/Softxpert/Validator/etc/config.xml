@@ -11,5 +11,10 @@
                 <class>Softxpert_Validator_Model</class>
             </softxpert_validator>
         </models>
+        <helpers>
+            <softxpert_validator>
+                <class>Softxpert_Validator_Helper</class>
+            </softxpert_validator>
+        </helpers>
     </global>
 </config>

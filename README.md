@@ -196,6 +196,16 @@ Return validation error messages in an HTML un-ordered list block.
  */
 public function getMessagesTemplate()
 ```
+##### redirectOnFailure
+End request and return with error messages on validation failure. This method supports both, redirecting to an HTML page with session error messages or JSON response.
+If `$redirectTo` is not specified, then the request will redirect to the previous page.
+```php
+/**
+ * @param  bool $wantsJson
+ * @param  string|null $redirectTo
+ */
+public function redirectOnFailure($wantsJson = false, $redirectTo = null)
+```
 
 ## Contributing
 Please, read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on the process for submitting pull requests to us.

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Changlog
 * Str_extension validation rule
 * Unit tests
+* Redirect on failure
 
 ## [1.1.0] - 2019-03-03
 ### Added

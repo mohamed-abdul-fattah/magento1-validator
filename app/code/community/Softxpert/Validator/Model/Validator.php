@@ -144,6 +144,33 @@ class Softxpert_Validator_Model_Validator
     }
 
     /**
+     * Redirect on validation failure with errors messages.
+     * In case of AJAX/API response is set to the errors
+     * messages and die.
+     *
+     * @param  bool $wantsJson
+     * @param  string|null $redirectTo
+     */
+    public function redirectOnFailure($wantsJson = false, $redirectTo = null)
+    {
+        if ( $this->fails() ) {
+            if ( $wantsJson ) {
+                Mage::helper('softxpert_validator/api')
+                    ->jsonResponse(
+                        $this->getMessages(),
+                        Softxpert_Validator_Helper_Api::HTTP_UNPROCESSABLE_ENTITY
+                    );
+            } else {
+                Mage::getSingleton('core/session')->addError($this->getMessagesTemplate());
+                $url = ($redirectTo) ? $redirectTo : Mage::helper('core/Http')->getHttpReferer();
+                Mage::app()->getResponse()->setRedirect($url);
+            }
+            Mage::app()->getResponse()->sendResponse();
+            die;
+        }
+    }
+
+    /**
      * beautify field name to view in HTML templates.
      *
      * @param  string $fieldName
