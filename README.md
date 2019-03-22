@@ -33,6 +33,8 @@ vendor/bin/modman init
 vendor/bin/modman link vendor/softxpert/magento1-validator
 # If this is an update, then we need to re-link the files
 vendor/bin/modman repair vendor/softxpert/magento1-validator
+# Regenerate autoload files
+composer dumpautoload
 ```
 Finally we are done, and you'll find the module files under `app/code/community/Softxpert/Validator` directory.
 
@@ -44,6 +46,11 @@ To validate a request you have 2 ways:
 /** @var Softxpert_Validator_Model_Validator $validator */
 $vaidator = Mage::getModel('softxpert_validator/validator');
 // Preparing validator with data and rules arrays
+$data  = $this->getRequest->getParams();
+$rules = [
+    'username' => 'required|alpha_num',
+    'email'    => 'required|string|email',
+]; 
 $validator->validate($data, $rules);
 
 // Check whether the data fails or passes
@@ -53,7 +60,7 @@ if ( $validator->fails() ) {
 }
 ```
 
-It supports nested inputs.
+It supports nested inputs too.
 ```php
 $data = [
     'banner' => [
@@ -85,6 +92,7 @@ $validator->validate($data, $rules);
 #### Observer Validator
 Create an observer for that particular route and handle all your request validations.
 
+For more example usage, visit the [ValidationsTest class](/tests/Unit/ValidationsTest.php).
 ## Rules And Methods
 ### Available Validation Rules
 ##### alpha

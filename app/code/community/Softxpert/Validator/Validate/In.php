@@ -27,7 +27,7 @@ class Softxpert_Validator_Validate_In extends Zend_Validate_Abstract
      *
      * @var array
      */
-    private $_haystack = [];
+    protected $haystack = [];
 
     /**
      * Set validator values to be the valid options.
@@ -41,7 +41,7 @@ class Softxpert_Validator_Validate_In extends Zend_Validate_Abstract
             throw new Zend_Validate_Exception('Expected a comma separated options');
         }
 
-        $this->_haystack = $values;
+        $this->haystack = $values;
     }
 
     /**
@@ -54,7 +54,7 @@ class Softxpert_Validator_Validate_In extends Zend_Validate_Abstract
     {
         $this->_setValue($value);
 
-        if ( ! in_array($value, $this->_haystack) ) {
+        if ( ! in_array($this->value, $this->haystack) ) {
             $this->_error(self::NOT_IN);
             return false;
         }
