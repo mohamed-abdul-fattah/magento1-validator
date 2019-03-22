@@ -87,7 +87,7 @@ $rules = [
 
 /** @var Softxpert_Validator_Model_Validator $validator */
 $vaidator = Mage::getModel('softxpert_validator/validator');
-$validator->validate($data, $rules);
+$validator->validate($data, $rules)->redirectOnFailure();
 ```
 #### Observer Validator
 Create an observer for that particular route and handle all your request validations.
