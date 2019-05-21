@@ -688,4 +688,22 @@ class ValidationsTest extends TestCase
             ],
         ], $this->_validator->getMessages());
     }
+
+    /**
+     * @test
+     */
+    public function validateNoChainConfiguration()
+    {
+        $rules = [
+            'input1' => 'integer|lt:50',
+            'input2' => 'integer|lt:30',
+        ];
+        $data = ['input1' => 's', 'input2' => 's'];
+
+        $this->_validator
+            ->validate($data, $rules)
+            ->noChain();
+
+        $this->assertEquals(ErrorMessages::fieldIsInteger('s'), $this->_validator->getMessages());
+    }
 }
