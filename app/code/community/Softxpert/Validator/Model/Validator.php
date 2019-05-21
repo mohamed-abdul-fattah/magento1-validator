@@ -57,6 +57,14 @@ class Softxpert_Validator_Model_Validator
     ];
 
     /**
+     * Detect whether the validator should break on the
+     * first in-valid rule or not.
+     *
+     * @var bool
+     */
+    protected $noChain = false;
+
+    /**
      * @var Zend_Filter_Input
      */
     private $_validator;
@@ -108,12 +116,18 @@ class Softxpert_Validator_Model_Validator
     /**
      * Get validation error messages.
      *
-     * @return array
+     * @return array|string
      */
     public function getMessages()
     {
-        $errorsBag = [];
+        if ( $this->noChain === true ) {
+            foreach ( $this->_validator->getMessages() as $field => $messages ) {
+                $messages = array_values($messages);
+                return $messages[0];
+            }
+        }
 
+        $errorsBag = [];
         foreach ( $this->_validator->getMessages() as $field => $messages ) {
             $errorsBag['errors'][$field] = array_values($messages);
         }
@@ -168,6 +182,19 @@ class Softxpert_Validator_Model_Validator
             Mage::app()->getResponse()->sendResponse();
             die;
         }
+    }
+
+    /**
+     * Set that the validator should break
+     * on the first in-valid rule.
+     *
+     * @param  bool $flag
+     * @return $this
+     */
+    public function noChain($flag = true)
+    {
+        $this->noChain = $flag;
+        return $this;
     }
 
     /**
