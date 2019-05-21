@@ -207,6 +207,17 @@ If `$redirectTo` is not specified, then the request will redirect to the previou
 public function redirectOnFailure($wantsJson = false, $redirectTo = null)
 ```
 
+##### noChain
+Determine whether the validation errors should break and return on the first in-valid rule,
+or return a complete set of error messages
+```php
+/**
+ * @param  bool $flag
+ * @return $this
+ */
+public function noChain($flag = true)
+```
+
 ## Contributing
 Please, read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
 
