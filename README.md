@@ -1,7 +1,7 @@
 # Magento Validator
 >Laravel like Magento 1.x validator.
 
-![Release](https://img.shields.io/badge/release-1.3.0-blue.svg)
+![Release](https://img.shields.io/badge/release-1.3.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg)
 
 Magento validator is a validation service to validate inputs for requests.
