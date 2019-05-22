@@ -142,6 +142,10 @@ class Softxpert_Validator_Model_Validator
      */
     public function getMessagesTemplate()
     {
+        if ( $this->noChain === true ) {
+            return "<ul><li>" . $this->getMessages() . "</li></ul>";
+        }
+
         $viewErrors = "<ul>";
         $validationErrors = $this->getMessages();
 
@@ -171,7 +175,7 @@ class Softxpert_Validator_Model_Validator
             if ( $wantsJson ) {
                 Mage::helper('softxpert_validator/api')
                     ->jsonResponse(
-                        $this->getMessages(),
+                        Mage::helper('softxpert_validator')->parseErrors($this->getMessages()),
                         Softxpert_Validator_Helper_Api::HTTP_UNPROCESSABLE_ENTITY
                     );
             } else {
